@@ -9,8 +9,8 @@ class Connection:
     def connect(self):
         try:
             conn = serial.Serial(self.port, self.baud)
-            print('Conectado com sucesso.\n')
+            logging.info('Conectado com sucesso.\n')
             return conn
         except:
-            print('Sem conexão na porta ' + str(self.port) + '.\n')
+            logging.error('Sem conexão na porta ' + str(self.port) + '.\n')
             return 0
